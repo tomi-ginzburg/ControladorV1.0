@@ -40,10 +40,10 @@ void actualizarContador();
 // =====[Implementacion de funciones publicas]=======
 
 void inicializarControles(){
-    const float *valoresSensores = leerSensores();
-    temperaturaCalentador = &valoresSensores[0]; 
-    temperaturaBomba = &valoresSensores[1]; 
-    temperaturaSeguridad = &valoresSensores[2]; 
+    const float (*valoresSensores)[CANTIDAD_MUESTRAS+1] = leerSensores();
+    temperaturaCalentador = &valoresSensores[0][0]; 
+    temperaturaBomba = &valoresSensores[1][0]; 
+    temperaturaSeguridad = &valoresSensores[2][0]; 
 
     configuracionesControl = leerConfiguraciones();
 

@@ -37,9 +37,9 @@ void titilarCursor(int x,int y);
 
 void inicializarInterfazUsuario(){
     
-    const float *valoresSensores = leerSensores();
-    temperaturaCalentadorIU = &valoresSensores[0]; 
-    temperaturaBombaIU = &valoresSensores[1]; 
+    const float (*valoresSensores)[CANTIDAD_MUESTRAS+1] = leerSensores();
+    temperaturaCalentadorIU = &valoresSensores[0][0]; 
+    temperaturaBombaIU = &valoresSensores[1][0]; 
 
     configuraciones = leerConfiguraciones();
     estadoConfiguracionesIU = leerEstadoConfiguraciones();
